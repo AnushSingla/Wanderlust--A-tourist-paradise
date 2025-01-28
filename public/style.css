@@ -1,0 +1,119 @@
+
+.nav-link{
+    color:black !important;
+}
+
+.navbar{
+    height: 90px;
+}
+.fa-compass{color: red !important;
+    font-size: 2rem;
+
+}
+
+
+
+.f-info{
+    background-color: lightgrey;
+    height: 200px;
+    display: flex;
+    flex-wrap: wrap;
+
+    justify-content: center;
+    align-items: space-evenly;
+    
+}
+
+.f-links a{
+    text-decoration: none;
+    color: black;
+}
+
+.f-links{
+    width: 100%;
+}
+
+.f-socials{
+    width: 100%;
+    font-size: 1.5rem;
+    
+}
+.f-socials i{
+    margin-right: 1rem;
+}
+
+.f-text{
+    width: 100%;
+}
+.f-info{
+    text-align: center;
+}
+
+.f-socials a{
+    color: black;
+}
+
+
+.card-listing{
+    border: none !important;
+    margin-bottom: 2rem !important;
+    
+}
+.card-img-top{
+    border-radius: 1rem !important;
+    width: 100% !important;
+    object-fit: cover !important;
+}
+.card-body{
+    padding: 0 !important;
+}
+
+.card-text{
+    font-family: "Figtree", serif;
+    font-optical-sizing: auto;
+    
+}
+
+.row a{
+    text-decoration: none;
+}
+.card-img-overlay{opacity: 0;
+
+}
+.card-img-overlay:hover{
+    opacity: 0.3;
+    background-color: white;
+}
+
+.btn1{
+    background-color: red !important;
+    color: white !important;
+    border-radius: 10px !important;
+}
+
+.btn2{
+    background-color: black !important;
+    color: white !important;
+    border-radius: 10px !important;
+}
+
+.btns{
+    display: flex;
+}
+
+#map{
+    width:500px;
+    height: 400px;
+}
+#marker {
+    background-image: url('https://docs.maptiler.com/sdk-js/assets/washington-monument.jpg');
+    background-size: cover;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.mapboxgl-popup {
+    max-width: 200px;
+}

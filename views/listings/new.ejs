@@ -1,0 +1,77 @@
+<% layout('/layouts/boilerplate') %>
+<body>
+    <div class="row">
+        <div class="col-8">
+            <h2>Add New Listing</h2>
+    <form method="post" , action="/listings"novalidate class="needs-validation" enctype="multipart/form-data">
+        <div class="mb-3">
+            <label for ="title" class="form-label">Title</label>
+            <input name="listing[title]" placeholder="Enter Title" class="form-control"required>
+            <div class="valid-feedback">Title is Acceptable</div>
+            <div class="invalid-feedback">Title is not Acceptable</div>
+        </div>
+       
+        <br><br>
+        <div class="mb-3">
+            <label for ="description" class="form-label">Description</label>
+            <textarea name="listing[description]" placeholder="Enter description" class="form-control" required></textarea> 
+            <div class="valid-feedback">Description is Acceptable</div>
+            <div class="invalid-feedback">Description is not Acceptable</div>
+        </div>
+        <br><br>
+        
+        <div class="mb-3">
+            <label for ="image" class="form-label">Upload Image</label>
+            <input name="listing[image]" placeholder="Enter Image URL" class="form-control" type="file" required>
+            
+        </div>
+        <br><br>
+        <div class="mb-3">
+            <label for ="price" class="form-label">Price</label>
+            <input name="listing[price]" placeholder="Enter Price" class="form-control col-2" required>
+            <div class="valid-feedback">Price is Acceptable</div>
+            <div class="invalid-feedback">Price is not Acceptable</div>
+        </div>
+        
+        <br><br>
+        <div class="mb-3">
+            <label for ="location" class="form-label">Location</label>
+            <input name="listing[location]" placeholder="Enter Location" class="form-control"required>
+            <div class="valid-feedback">Location is Acceptable</div>
+            <div class="invalid-feedback">Location is not Acceptable</div>
+        </div>
+        <br><br>
+        <div class="mb-3">
+            <label for ="country" class="form-label">Country</label>
+            <input name="listing[country]" placeholder="Enter Country" class="form-control"required>
+            <div class="valid-feedback">Country is Acceptable</div>
+            <div class="invalid-feedback">Country is not Acceptable</div>
+        </div>
+        <br>
+        <div class="mb-3">
+            <label for ="category" class="form-label">Select Category :</label>
+            <select name="listing[category]"id="category" required>
+                <option value="Cities">Cities</option>
+                <option value="Mountains">Mountains</option>
+                <option value="Beaches">Beaches</option>
+                <option value="Islands">Islands</option>
+                <option value="Arctic">Arctic</option>
+                <option value="Pools">Pools</option>
+                <option value="Lakes">Lakes</option>
+                <option value="Camping">Camping</option>
+
+
+
+
+            </select>
+
+        </div>
+        <br>
+        <button class="btn btn-dark btn1 mb-3">Submit</button>
+    </form>
+        </div>
+    </div>
+    
+     
+</body>
+</html>
