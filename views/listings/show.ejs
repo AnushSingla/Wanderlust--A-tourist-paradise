@@ -107,6 +107,7 @@
                 <p class="starability-result" data-rating="<%=review.rating%>"></p>
             </p>
               </ul>
+          </div>
              
              
           
@@ -115,10 +116,11 @@
            <form method="post" class="col-5 offset-1 " action="/listings/<%=listing.id%>/reviews/<%=review._id%>?_method=DELETE">
             <button class="btn btn-dark mb-3">DELETE</button>
            </form>
-          </div>
+          
            <%}%>
-         <%}%>
+        
         </div>
+        <%}%>
           
       </div>
       <%}%>
