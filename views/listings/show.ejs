@@ -110,11 +110,13 @@
              
              
           </div>
-       
-          <form method="post" class="col-5 offset-1 " action="/listings/<%=listing.id%>/reviews/<%=review._id%>?_method=DELETE">
+          <%if(currUser && currUser._id.equals(listing.owner._id)){>% 
+            <form method="post" class="col-5 offset-1 " action="/listings/<%=listing.id%>/reviews/<%=review._id%>?_method=DELETE">
             <button class="btn btn-dark mb-3">DELETE</button>
           </form>
         </div>
+        <%}%>
+         
          
         <%}%>
           
