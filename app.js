@@ -98,6 +98,10 @@ app.use((req,res,next)=>{
   next();
 })
 
+app.get("/",(req,res)=>{
+  res.send("Welcome to Home Page")
+})
+
   
 
 app.use("/listings", listingRouter);
