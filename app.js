@@ -99,7 +99,7 @@ app.use((req,res,next)=>{
 })
 
 app.get("/",(req,res)=>{
-  res.send("Welcome to Home Page")
+  res.render("listings/home.ejs")
 })
 
   
