@@ -2,20 +2,15 @@ const { response } = require("express");
 const Listing = require("../models/listing.js")
 
 module.exports.index=async(req,res)=>{
-    currUser=req.user;
-    success=req.flash("success")
     let listings = await Listing.find({});
-    res.render("listings/index.ejs",{listings},{currUser,success})
+    res.render("listings/index.ejs",{listings})
   }
 
   module.exports.newlisting=(req,res)=>{
-    currUser=req.user;
-    success=req.flash("success")
-    res.render("listings/new.ejs",{currUser,success})
+    res.render("listings/new.ejs")
   }
 
   module.exports.renderlisting=async(req,res)=>{
-   
     let {id}=req.params;
     const listing=await Listing.findById(id).populate("reviews").populate("owner").populate({path:"reviews",populate:{
       path:"author"
@@ -24,11 +19,11 @@ module.exports.index=async(req,res)=>{
       req.flash("error","Listing doesn't exist");
       res.redirect("/listings")
     } 
-    res.render("listings/show.ejs",{listing},{currUser,success});
+    res.render("listings/show.ejs",{listing});
   }
 
   module.exports.rendernewlisting=async(req,res,next)=>{
-  
+    
     let url=req.file.path;
     let filename=req.file.filename;
     const newlisting = new Listing(req.body.listing);
@@ -45,17 +40,14 @@ module.exports.index=async(req,res)=>{
   }
 
   module.exports.editlisting=async(req,res)=>{
-    currUser=req.user;
-    success=req.flash("success")
     let {id}=req.params;
     const listing=await Listing.findById(id);
     let originalURL=listing.image.url;
     originalURL=originalURL.replace("/upload","/upload/h_300,w_250")
-    res.render("listings/edit.ejs",{listing,originalURL},{currUser},{success});
+    res.render("listings/edit.ejs",{listing,originalURL});
   }
 
   module.exports.rendereditlisting=async(req,res)=>{
-   
     let {id} = req.params;
     let listing=await Listing.findByIdAndUpdate(id,{...req.body.listing})
     if(typeof req.file!=="undefined"){
@@ -70,7 +62,6 @@ module.exports.index=async(req,res)=>{
   }
 
   module.exports.destroylisting=async(req,res)=>{
-  
       let {id}=req.params;
       const listing=await Listing.findByIdAndDelete(id);
       req.flash("success","Listing Deleted Successfully")

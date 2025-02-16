@@ -4,7 +4,7 @@ if(process.env.NODE_ENV!="production"){
 
 const express = require('express')
 const app = express();
-const port=3000;
+const port=8080;
 const mongoose=require("mongoose");
 const path=require("path");
 
@@ -83,25 +83,23 @@ const SessionOptions ={
 
 
 app.use(session(SessionOptions));
-
+app.use(flash());
 
 app.use(passport.initialize());
 app.use(passport.session());
 passport.use(new LocalStrategy(User.authenticate()));
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
-app.use(flash());
 
 app.use((req,res,next)=>{
-  res.locals.success=req.flash("success")||null;
+  res.locals.success=req.flash("success")
   res.locals.error=req.flash("error")
-  res.locals.currUser=req.user||null;
+  res.locals.currUser=req.user;
   next();
 })
 
 app.get("/",(req,res)=>{
   currUser=req.user;
-  req.flash("success","good")
   res.render("listings/home.ejs",{currUser})
 })
 
