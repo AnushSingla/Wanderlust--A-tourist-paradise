@@ -99,7 +99,8 @@ app.use((req,res,next)=>{
 })
 
 app.get("/",(req,res)=>{
-  res.render("listings/home.ejs")
+  currUser=req.user;
+  res.render("listings/home.ejs",{currUser})
 })
 
   
