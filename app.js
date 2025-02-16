@@ -92,7 +92,7 @@ passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
 app.use((req,res,next)=>{
-  res.locals.success=req.flash("success")
+  res.locals.success=req.flash("success")||null;
   res.locals.error=req.flash("error")
   res.locals.currUser=req.user||null;
   next();
