@@ -100,7 +100,7 @@ app.use((req,res,next)=>{
 
 app.get("/",(req,res)=>{
   currUser=req.user;
-  success=req.flash("success","good")
+  success=req.flash("success")
   res.render("listings/home.ejs",{currUser},{success})
 })
 
