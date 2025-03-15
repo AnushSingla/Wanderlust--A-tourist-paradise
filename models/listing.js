@@ -21,7 +21,8 @@ const listingSchema= new mongoose.Schema({
     },
     category:{
         type:String,
-        enum:["Cities","Mountains","Beaches","Islands","Arctic","Pools","Lakes","Camping"]
+        enum:["Cities","Mountains","Beaches","Islands","Arctic","Pools","Lakes","Camping"],
+        required:true
         
     },
     reviews:[
@@ -44,6 +45,7 @@ const Listing = mongoose.model("Listing",listingSchema);
 module.exports= Listing;
 
 const Review=require("./review.js");
+const { required } = require("joi");
 
 listingSchema.post("findOneAndDelete",async(listing)=>{
     if(listing){
