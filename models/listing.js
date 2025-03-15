@@ -22,7 +22,7 @@ const listingSchema= new mongoose.Schema({
     category:{
         type:String,
         enum:["Cities","Mountains","Beaches","Islands","Arctic","Pools","Lakes","Camping"],
-        required:true
+        required:true,
         
     },
     reviews:[

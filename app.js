@@ -98,6 +98,7 @@ app.use((req,res,next)=>{
   next();
 })
 
+
 app.get("/",(req,res)=>{
   currUser=req.user;
   res.render("listings/home.ejs",{currUser})
