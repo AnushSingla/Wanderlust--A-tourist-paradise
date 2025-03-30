@@ -68,9 +68,10 @@
     padding: 0 !important;
 }
 
-.card-text{
+.card-text .b .p .i{
     font-family: "Figtree", serif;
     font-optical-sizing: auto;
+    text-decoration: none !important
     
 }
 

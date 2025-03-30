@@ -104,6 +104,13 @@ app.get("/",(req,res)=>{
   res.render("listings/home.ejs",{currUser})
 })
 
+app.get("/search",async(req,res)=>{
+  currUser=req.user;
+  let location = req.query.location;
+  let listings = await Listing.find({ location: { $regex: location, $options: "i" } }); 
+    res.render('listings/searchResults.ejs', { listings });
+})
+
   
 
 app.use("/listings", listingRouter);
