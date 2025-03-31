@@ -110,7 +110,14 @@ app.get("/search",async(req,res)=>{
   let listings = await Listing.find({ location: { $regex: location, $options: "i" } }); 
     res.render('listings/searchResults.ejs', { listings });
 })
-
+app.get("/category/:category",async(req,res)=>{
+  currUser=req.user;
+  const category = req.params.category;
+  let listings = await Listing.find({ 
+    category: { $regex: new RegExp(category, "i") } 
+}); 
+    res.render('listings/filer.ejs', { category , listings });
+})
   
 
 app.use("/listings", listingRouter);

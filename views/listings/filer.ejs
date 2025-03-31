@@ -1,0 +1,21 @@
+<% layout('/layouts/boilerplate') %>
+  <div class="container mt-5">
+    <h2>CATEGORY : <%= category.charAt(0).toUpperCase() + category.slice(1) %></h2>
+    <% if (listings.length > 0) { %>
+      <ul class="list-group">
+        <% listings.forEach(listing => { %>
+          <li class="list-group-item">
+            <img src="<%=listing.image.url%>" class="card-img-top" style="height: 20rem;">
+            <h3><%= listing.title %></h3>
+            <p>Location: <%= listing.location %></p>
+            <p>Price: &#8377; <%= listing.price %> per night</p>
+          </li>
+          <br>
+          <br>
+        <% }) %>
+      </ul>
+    <% } else { %>
+      <p>No listings found in this category.</p>
+    <% } %>
+  </div>
+
