@@ -51,6 +51,11 @@
 
 .f-socials a{
     color: black;
+    
+}
+.f-socials i:hover {
+    transform: translateY(-5px);
+  
 }
 
 
@@ -137,7 +142,7 @@ body {
 /* Hero Section */
 .hero {
     
-    height: 70vh;
+    height: 40vh;
     display: flex;
     align-items: center;
     justify-content: center;
